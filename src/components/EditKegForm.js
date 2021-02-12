@@ -16,7 +16,7 @@ function EditKegForm(props) {
         formSubmissionHandler={handleEditFormSubmission}
         buttonText='Update Keg' />
     </>
-  )
+  );
 }
 
 EditKegForm.propTypes = {
