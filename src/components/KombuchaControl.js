@@ -13,7 +13,8 @@ class KombuchaControl extends React.Component {
       masterKegList: [],
       selectedKeg: null,
       editing: false,
-      buying: false
+      buying: false,
+      soldOutVisibleOnPage: false
     };
   }
 
@@ -49,10 +50,17 @@ class KombuchaControl extends React.Component {
 
   handleBuyPint = () => {
     const selectedKeg = this.state.selectedKeg;
-    console.log("buying pint!");
-    if (selectedKeg.pintsLeft >= 1) {
-      console.log("buying pint!");
+    if (selectedKeg.pintsLeft > 1) {
       const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft - 1});
+      const newMasterKegList = this.state.masterKegList
+        .filter(keg => keg.id !== this.state.selectedKeg.id)
+        .concat(newPintCount);
+      this.setState({
+        masterKegList: newMasterKegList,
+        selectedKeg: null
+      });
+    } else if (selectedKeg.pintsLeft === 1) {
+      const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft = 'sold out'});
       const newMasterKegList = this.state.masterKegList
         .filter(keg => keg.id !== this.state.selectedKeg.id)
         .concat(newPintCount);
@@ -62,6 +70,7 @@ class KombuchaControl extends React.Component {
       });
     }
   }
+  // new kegs get moved to the bottom of the list, so after a pint is bought or edited, it moves down. why?
 
   handleClick = () => {
     if (this.state.selectedKeg != null) {
@@ -92,6 +101,9 @@ class KombuchaControl extends React.Component {
       currentVisibleState = <AddKegForm onNewKegCreation={this.handleAddingKeg} />
       buttonText='Return to Keg List';
     } else if (this.state.selectedKeg != null) {
+      currentVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleKegDelete} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyPint} />
+      buttonText='Return to Keg List';
+    } else if (this.state.selectedKeg != null && this.state.soldOutVisibleOnPage) {
       currentVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleKegDelete} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyPint} />
       buttonText='Return to Keg List';
     } else {
