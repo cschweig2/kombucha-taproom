@@ -12,7 +12,8 @@ class KombuchaControl extends React.Component {
       formVisibleOnPage: false,
       masterKegList: [],
       selectedKeg: null,
-      editing: false
+      editing: false,
+      buying: false
     };
   }
 
@@ -40,6 +41,24 @@ class KombuchaControl extends React.Component {
     this.setState({ selectedKeg: selectedKeg });
   }
 
+  handleKegDelete = (id) => {
+    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedKeg: null
+    });
+  }
+
+  handleBuyPint = (kegToRemovePintFrom) => {
+    const newMasterKegList = this.state.masterKegList
+    .filter(keg => keg.id !== this.state.selectedKeg.id)
+    .concat(kegToRemovePintFrom);
+    this.setState({
+      masterKegList: newMasterKegList,
+      selectedKeg: null
+    });
+  }
+
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
@@ -58,10 +77,6 @@ class KombuchaControl extends React.Component {
     this.setState({ editing: true });
   }
 
-  handleAddKegClick() {
-
-  }
-
   render() {
     let currentVisibleState = null;
     let buttonText = null;
@@ -69,7 +84,7 @@ class KombuchaControl extends React.Component {
       currentVisibleState = <AddKegForm onNewKegCreation={this.handleAddingKeg} />
       buttonText='Return to Keg List';
     } else if (this.state.selectedKeg != null) {
-      currentVisibleState = <KegDetail keg={this.state.selectedKeg} />
+      currentVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleKegDelete} />
       buttonText='Return to Keg List';
     } else if (this.state.editing) {
       currentVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKeg} />
