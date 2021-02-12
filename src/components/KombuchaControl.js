@@ -13,8 +13,7 @@ class KombuchaControl extends React.Component {
       masterKegList: [],
       selectedKeg: null,
       editing: false,
-      buying: false,
-      soldOutVisibleOnPage: false
+      buying: false
     };
   }
 
@@ -60,7 +59,7 @@ class KombuchaControl extends React.Component {
         selectedKeg: null
       });
     } else if (selectedKeg.pintsLeft === 1) {
-      const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft = 'sold out'});
+      const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft = 'Out of Stock'});
       const newMasterKegList = this.state.masterKegList
         .filter(keg => keg.id !== this.state.selectedKeg.id)
         .concat(newPintCount);
@@ -87,7 +86,6 @@ class KombuchaControl extends React.Component {
   }
 
   handleEditClick = () => {
-    console.log("editing reached!");
     this.setState({ editing: true });
   }
 
