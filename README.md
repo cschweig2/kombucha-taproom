@@ -1,16 +1,16 @@
-# Avery's Organics Landing Page
+# Got The Booch Kombucha Taproom
 
-### Last updated: 2.9.2021
+### Created: 2.12.2021 - Last Updated: 2.12.2021
 
 ## Description
 
-Avery's Organics is a mid-sized farm in Northern Oregon that grows organic produce and sells it at farmers markets throughout town. This application displays the farmers market they are at on any given day, as well as seasonal produce available.
+This application displays the landing page for Got The Booch Kombucha Taproom.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Component Diagram
 
-[![Farmers-Market-Component-Diagram.jpg](https://i.postimg.cc/2jF3Rvnt/Farmers-Market-Component-Diagram.jpg)](https://postimg.cc/PNJd1C3b)
+
 
 ## Technologies Used
 
@@ -67,33 +67,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
 ## Legal
 
 *This software is licensed under the MIT license.*
 
-Copyright (c) 2020 **Chelsea Becker, Joseph Giunta**
+Copyright (c) 2021 **Chelsea Becker*
