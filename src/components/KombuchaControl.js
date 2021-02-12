@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import KegDetail from './KegDetail';
 import KegList from './KegList';
 import AddKegForm from './AddKegForm';
@@ -18,6 +18,7 @@ class KombuchaControl extends React.Component {
 
   render() {
     let currentVisibleState = null;
+    let buttonText = null;
     if (this.state.formVisibleOnPage)  {
       currentVisibleState = <AddKegForm />
     } else if (this.state.selectedKeg != null) {
@@ -25,5 +26,15 @@ class KombuchaControl extends React.Component {
     } else if (this.state.editing) {
       currentVisibleState = <EditKegForm />
     }
+
+    return (
+      <>
+        {currentVisibleState}
+        <button onClick={this.methodTBD}>{buttonText}</button>
+      </>
+    );
   }
+
 }
+
+export default KombuchaControl;
