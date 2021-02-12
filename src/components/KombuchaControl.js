@@ -69,10 +69,10 @@ class KombuchaControl extends React.Component {
       currentVisibleState = <AddKegForm onNewKegCreation={this.handleAddingKeg} />
       buttonText='Return to Keg List';
     } else if (this.state.selectedKeg != null) {
-      currentVisibleState = <KegDetail />
+      currentVisibleState = <KegDetail keg={this.state.selectedKeg} />
       buttonText='Return to Keg List';
     } else if (this.state.editing) {
-      currentVisibleState = <EditKegForm onEditKeg={this.handleEditingKeg} />
+      currentVisibleState = <EditKegForm keg={this.state.selectedKeg} onEditKeg={this.handleEditingKeg} />
       buttonText='Return to Keg List';
     } else {
       currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleKegSelection} />
@@ -82,7 +82,7 @@ class KombuchaControl extends React.Component {
     return (
       <>
         {currentVisibleState}
-        <button onClick={this.handleAddingKeg}>{buttonText}</button>
+        <button onClick={this.handleClick}>{buttonText}</button>
       </>
     );
   }
