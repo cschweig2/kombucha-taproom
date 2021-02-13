@@ -69,7 +69,6 @@ class KombuchaControl extends React.Component {
       });
     }
   }
-  // new kegs get moved to the bottom of the list, so after a pint is bought or edited, it moves down. why?
 
   handleClick = () => {
     if (this.state.selectedKeg != null) {
@@ -99,9 +98,6 @@ class KombuchaControl extends React.Component {
       currentVisibleState = <AddKegForm onNewKegCreation={this.handleAddingKeg} />
       buttonText='Return to Keg List';
     } else if (this.state.selectedKeg != null) {
-      currentVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleKegDelete} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyPint} />
-      buttonText='Return to Keg List';
-    } else if (this.state.selectedKeg != null && this.state.soldOutVisibleOnPage) {
       currentVisibleState = <KegDetail keg={this.state.selectedKeg} onClickingDelete={this.handleKegDelete} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyPint} />
       buttonText='Return to Keg List';
     } else {
