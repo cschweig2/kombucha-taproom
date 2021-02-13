@@ -1,16 +1,16 @@
-# Got The Booch Kombucha Taproom
+# Who Got The Booch? Kombucha Taproom
 
 ### Created: 2.12.2021 - Last Updated: 2.12.2021
 
 ## Description
 
-This application displays the landing page for Got The Booch Kombucha Taproom.
+This application displays the landing page for Got The Booch Kombucha Taproom. A user may add, view, and delete kegs. A user may also purchase a pint from a keg.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Component Diagram
 
-
+[![components.jpg](https://i.postimg.cc/WzP05LnX/components.jpg)](https://postimg.cc/HcBJLNFy)
 
 ## Technologies Used
 
