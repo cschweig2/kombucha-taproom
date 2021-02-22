@@ -59,7 +59,7 @@ class KombuchaControl extends React.Component {
         selectedKeg: null
       });
     } else if (selectedKeg.pintsLeft === 1) {
-      const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft = 'Out of Stock'});
+      const newPintCount = Object.assign({}, selectedKeg, { pintsLeft: selectedKeg.pintsLeft = 0});
       const newMasterKegList = this.state.masterKegList
         .filter(keg => keg.id !== this.state.selectedKeg.id)
         .concat(newPintCount);
