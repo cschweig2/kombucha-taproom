@@ -7,7 +7,11 @@ function EditKegForm(props) {
 
   function handleEditFormSubmission(event) {
     event.preventDefault();
-    props.onEditKeg({name: event.target.name.value, brand: event.target.brand.value, flavor: event.target.flavor.value, price: event.target.price.value, id: keg.id});
+    props.onEditKeg({name: event.target.name.value,
+      brand: event.target.brand.value,
+      flavor: event.target.flavor.value,
+      price: parseFloat(event.target.price.value),
+      id: keg.id});
   }
 
   return (

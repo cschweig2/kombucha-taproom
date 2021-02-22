@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <KombuchaControl />
+      <section id="main-background">
+        <KombuchaControl />
+      </section>
     </div>
   );
 }
